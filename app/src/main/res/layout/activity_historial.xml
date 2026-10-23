@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Encabezado -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Plantilla de Trabajadores"
+        android:textColor="#1976D2"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- Contador de trabajadores registrados -->
+    <TextView
+        android:id="@+id/textoContador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="12dp"
+        android:text="0 trabajadores registrados"
+        android:textColor="#757575"
+        android:textSize="15sp" />
+
+    <!-- Mensaje si la lista está vacía -->
+    <TextView
+        android:id="@+id/textoListaVacia"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="No hay ningún trabajador registrado todavía.\nRegistra uno desde el formulario."
+        android:textColor="#9E9E9E"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <!-- RecyclerView con los trabajadores -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerTrabajadores"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:paddingVertical="4dp" />
+
+    <!-- Botones de Acción -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/botonVaciarHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginBottom="8dp"
+            android:backgroundTint="#D32F2F"
+            android:text="Vaciar historial"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/botonVolverHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:backgroundTint="#757575"
+            android:text="Volver"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+</LinearLayout>

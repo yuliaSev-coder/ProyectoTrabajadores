@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Ficha del Trabajador"
+            android:textColor="#1976D2"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <!-- Tarjeta de identificación -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_card"
+            android:elevation="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Foto grande del trabajador -->
+            <ImageView
+                android:id="@+id/imagenFotoDetalle"
+                android:layout_width="140dp"
+                android:layout_height="140dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/electricista"
+                android:contentDescription="Foto de perfil del trabajador"
+                android:padding="8dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/albanil" />
+
+            <!-- Nombre Completo -->
+            <TextView
+                android:id="@+id/textoNombreCompleto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Nombre y Apellidos"
+                android:textColor="#212121"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <!-- Puesto / Oficio -->
+            <TextView
+                android:id="@+id/textoOficioDetalle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="Puesto: Albañil"
+                android:textColor="#1976D2"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Indicador de audio -->
+            <TextView
+                android:id="@+id/textoSonidoInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="🔊 Sonido asignado según el oficio"
+                android:textColor="#757575"
+                android:textSize="14sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="12dp"
+                android:background="#E0E0E0" />
+
+            <!-- Mensaje de estado -->
+            <TextView
+                android:id="@+id/textoEstadoRegistro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trabajador registrado en la plantilla"
+                android:textColor="#388E3C"
+                android:textSize="15sp"
+                android:textStyle="italic" />
+
+        </LinearLayout>
+
+        <!-- Botones de Navegación -->
+        <Button
+            android:id="@+id/botonVerListaDesdeDetalle"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="10dp"
+            android:backgroundTint="#0D47A1"
+            android:text="Ver lista de trabajadores"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+        <Button
+            android:id="@+id/botonVolver"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:backgroundTint="#757575"
+            android:text="Volver al formulario"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>

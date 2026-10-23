@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <TextView
+            android:id="@+id/textoTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="4dp"
+            android:text="Registro de Trabajadores"
+            android:textColor="#1976D2"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textoSubtitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Introduce los datos del nuevo empleado"
+            android:textColor="#757575"
+            android:textSize="14sp" />
+
+        <!-- Tarjeta del Formulario -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="2dp"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Previsualización de la foto seleccionada -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Foto del trabajador:"
+                android:textColor="#424242"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/imagenFotoPreview"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginBottom="12dp"
+                android:background="@drawable/ic_launcher_foreground"
+                android:contentDescription="Previsualización de la foto"
+                android:padding="6dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/albanil" />
+
+            <!-- Selector de Oficio / Foto -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:text="Selecciona el puesto y foto:"
+                android:textColor="#616161"
+                android:textSize="14sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroupOficio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal"
+                android:soundEffectsEnabled="false">
+
+                <RadioButton
+                    android:id="@+id/radioAlbanil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Albañil"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/radioElectricista"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Electricista"
+                    android:textSize="14sp" />
+
+                <RadioButton
+                    android:id="@+id/radioFontanero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Fontanero"
+                    android:textSize="14sp" />
+            </RadioGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Nombre"
+                android:textColor="#424242"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editNombre"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="14dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:hint="Ej. Carlos"
+                android:inputType="textPersonName|textCapWords"
+                android:paddingHorizontal="12dp"
+                android:textSize="16sp" />
+
+            <!-- Campo Apellidos -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="Apellidos"
+                android:textColor="#424242"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/editApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginBottom="20dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:hint="Ej. García López"
+                android:inputType="textPersonName|textCapWords"
+                android:paddingHorizontal="12dp"
+                android:textSize="16sp" />
+
+            <!-- Botón Guardar / Continuar -->
+            <Button
+                android:id="@+id/botonRegistrar"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#1976D2"
+                android:text="Registrar y ver ficha"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp" />
+
+            <!-- Botón Olvidar datos SharedPreferences -->
+            <Button
+                android:id="@+id/botonOlvidar"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Borrar datos recordados"
+                android:textColor="#757575"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <!-- Botón Ver Historial / Lista completa -->
+        <Button
+            android:id="@+id/botonVerHistorial"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#0D47A1"
+            android:text="Ver lista de trabajadores"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</ScrollView>
