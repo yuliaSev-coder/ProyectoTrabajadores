@@ -1,5 +1,5 @@
 package com.example.proyectotrabajadores
 
 object Historial {
-    val trabajadores = mutableListOf<Trabajador>()
+    val trabajadores = mutableListOf<Electricista>()
 }

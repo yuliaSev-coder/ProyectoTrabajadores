@@ -31,7 +31,15 @@ class HistorialAdapter(
         val trabajador = trabajadores[position]
         holder.textoNombreCompleto.text = "${trabajador.nombre} ${trabajador.apellidos}"
         holder.textoOficio.text = "Puesto: ${trabajador.oficio}"
-        holder.imagenFoto.setImageResource(trabajador.fotoResId)
+
+        // Asignamos la imagen dinámicamente según el oficio guardado
+        val fotoResId = when (trabajador.oficio) {
+            "Albañil" -> R.drawable.albanil
+            "Electricista" -> R.drawable.electricista
+            "Fontanero" -> R.drawable.fontanero
+            else -> R.drawable.albanil
+        }
+        holder.imagenFoto.setImageResource(fotoResId)
 
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(trabajador)

@@ -8,6 +8,8 @@ import android.widget.ImageView
 import android.widget.RadioGroup
 import android.widget.Toast
 import androidx.activity.ComponentActivity
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class MainActivity : ComponentActivity() {
 
@@ -80,9 +82,15 @@ class MainActivity : ComponentActivity() {
                         .putString("APELLIDOS_GUARDADOS", apellidos)
                         .apply()
 
-                    // Añadimos el nuevo trabajador a la lista compartida en memoria
-                    val nuevoTrabajador = Trabajador(nombre, apellidos, oficioSeleccionado, fotoSeleccionadaId)
-                    Historial.trabajadores.add(nuevoTrabajador)
+                    // Insertamos en la tabla correspondiente según el oficio seleccionado
+                    lifecycleScope.launch {
+                        val db = AppDatabase.obtener(this@MainActivity)
+                        when (oficioSeleccionado) {
+                            "Albañil" -> db.albanilDao().insertar(Albanil(nombre = nombre, apellidos = apellidos))
+                            "Electricista" -> db.electricistaDao().insertar(Electricista(nombre = nombre, apellidos = apellidos))
+                            "Fontanero" -> db.fontaneroDao().insertar(Fontanero(nombre = nombre, apellidos = apellidos))
+                        }
+                    }
 
                     // Navegamos a SecondActivity mandando los datos a través del Intent
                     val intent = Intent(this, SecondActivity::class.java).apply {
