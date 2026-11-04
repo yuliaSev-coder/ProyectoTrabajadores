@@ -12,7 +12,8 @@ import androidx.recyclerview.widget.RecyclerView
  */
 class HistorialAdapter(
     private val trabajadores: List<Trabajador>,
-    private val onItemClick: ((Trabajador) -> Unit)? = null
+    private val onItemClick: ((Trabajador) -> Unit)? = null,
+    private val onItemLongClick: ((Trabajador) -> Unit)? = null
 ) : RecyclerView.Adapter<HistorialAdapter.TrabajadorViewHolder>() {
 
     class TrabajadorViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -43,6 +44,11 @@ class HistorialAdapter(
 
         holder.itemView.setOnClickListener {
             onItemClick?.invoke(trabajador)
+        }
+
+        holder.itemView.setOnLongClickListener {
+            onItemLongClick?.invoke(trabajador)
+            true
         }
     }
 

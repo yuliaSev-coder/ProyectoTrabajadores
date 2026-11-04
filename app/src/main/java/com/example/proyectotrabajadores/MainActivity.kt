@@ -82,14 +82,14 @@ class MainActivity : ComponentActivity() {
                         .putString("APELLIDOS_GUARDADOS", apellidos)
                         .apply()
 
-                    // Insertamos en la tabla correspondiente según el oficio seleccionado
+                    // Insertamos el nuevo trabajador en la base de datos Room usando corrutinas
+                    val nuevoTrabajador = Trabajador(
+                        nombre = nombre,
+                        apellidos = apellidos,
+                        oficio = oficioSeleccionado
+                    )
                     lifecycleScope.launch {
-                        val db = AppDatabase.obtener(this@MainActivity)
-                        when (oficioSeleccionado) {
-                            "Albañil" -> db.albanilDao().insertar(Albanil(nombre = nombre, apellidos = apellidos))
-                            "Electricista" -> db.electricistaDao().insertar(Electricista(nombre = nombre, apellidos = apellidos))
-                            "Fontanero" -> db.fontaneroDao().insertar(Fontanero(nombre = nombre, apellidos = apellidos))
-                        }
+                        AppDatabase.obtener(this@MainActivity).trabajadorDao().insertar(nuevoTrabajador)
                     }
 
                     // Navegamos a SecondActivity mandando los datos a través del Intent
